@@ -2,7 +2,7 @@
 -- Schema: orders(order_key, order_id, order_date, customer_id, customer_name, age, gender,
 --                city_id, product_id, quantity, unit_price, total_sales)
 --         dim_product(product_id, product, category)   dim_city(city_id, city)
--- NOTE: Order_ID is NOT unique in the source (each ID appears up to 9 times), so order_key is the true row key.
+-- NOTE: Order_ID is NOT unique in the dataset (each ID appears up to 9 times), so order_key is the true row key.
 
 -- Q1. Top 5 products by revenue in the last 6 months
 SELECT p.product, p.category, ROUND(SUM(o.total_sales),2) AS revenue, SUM(o.quantity) AS units, COUNT(*) AS orders
